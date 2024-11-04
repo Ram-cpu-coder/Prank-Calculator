@@ -1,9 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap");
+
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: linear-gradient(rgb(228 99 99 / 52%), rgb(199 177 177));
+}
+h1 {
+  font-family: "Tiro Devanagari Hindi", serif;
 }
 .wrapper {
   display: flex;
@@ -21,7 +27,7 @@ body {
   backdrop-filter: blur(20px);
 }
 input {
-  width: 320px;
+  width: 285px;
   height: 50px;
   font-size: 25px;
   padding: 10px;
@@ -46,13 +52,20 @@ input {
   height: 50px;
   width: 50px;
   padding: 30px;
-  border: 1px solid black;
+  border: none;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 25px;
   cursor: pointer;
+}
+.yellow {
+  background: rgb(156, 154, 14);
+}
+.red {
+  background: rgb(144, 21, 21);
+  color: antiquewhite;
 }
 button:active {
   background: rgb(179, 175, 175);
@@ -62,7 +75,7 @@ button:active {
   height: 50px;
   width: 150px;
   padding: 30px;
-  border: 1px solid black;
+  border: none;
   border-radius: 20px;
   display: flex;
   justify-content: center;

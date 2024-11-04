@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.querySelector(".input");
+// ==========================taking input upon clicking the buttons=======
 
-  const btn = document.querySelectorAll(".button");
-  btn.forEach((buttons) => {
-    buttons.addEventListener("click", () => {
-      const text = input.value;
-      console.log("clicked");
-      console.log(text);
-    });
+const input = document.querySelector("input");
+// console.log(input);
+
+const btn = document.querySelectorAll(".button");
+btn.forEach((buttons) => {
+  buttons.addEventListener("click", (e) => {
+    let buttonText = e.target.textContent;
+    // console.log(e.target.textContent);
+    input.value += buttonText;
   });
 });
