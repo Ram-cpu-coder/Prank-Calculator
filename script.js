@@ -5,6 +5,8 @@ const operators = "%*/-+";
 let lastOperator = "";
 
 const calculatorOperation = (val) => {
+  displayElm.style.background = "";
+  displayElm.classList.remove("prank");
   if (val === "=") {
     const lastChar = strToDisplay[strToDisplay.length - 1];
     if (operators.includes(lastChar)) {
@@ -57,7 +59,7 @@ const total = () => {
   const extra = extraval();
   if (extra) {
     displayElm.style.background = "red";
-    displayElm.classList.toggle("prank");
+    displayElm.classList.add("prank");
   }
   const ttl = eval(strToDisplay) + extra;
   strToDisplay = ttl.toString();
