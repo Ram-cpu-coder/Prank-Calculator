@@ -13,12 +13,18 @@ let strToDisplay = "";
 let displayElm = document.querySelector(".input");
 const operators = "%/*-+";
 let lastOperator = "";
+const audio = new Audio("./assets/audio.mp3");
+
 // /select all the buttons
 const btns = document.querySelectorAll(".button");
 
 btns.forEach((button) => {
   button.addEventListener("click", (e) => {
-    // console.log(button);
+    displayElm.style.background = "";
+    displayElm.style.color = "";
+    displayElm.classList.remove("prank");
+    audio.pause();
+
     const val = button.innerText;
 
     if (val === "AC") {
@@ -72,7 +78,26 @@ const display = (str) => {
 ///calculation function
 const total = () => {
   if (!strToDisplay.length) return;
-  const ttl = eval(strToDisplay);
+
+  const extraValue = randomNum();
+  if (extraValue) {
+    displayElm.style.background = "red";
+    displayElm.style.color = "white";
+    displayElm.classList.add("prank");
+    audio.play();
+  }
+  const ttl = eval(strToDisplay) + extraValue;
   strToDisplay = ttl.toString();
   display(ttl);
 };
+
+const randomNum = () => {
+  const num = Math.round(Math.random() * 10);
+  return num < 7 ? num : 0;
+};
+
+document.addEventListener("keydown", (e) => {
+  const val = e.key;
+
+  console.log(typeof val);
+});
