@@ -59,12 +59,24 @@ h1 {
   align-items: center;
   font-size: 25px;
   cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.03);
 }
 .yellow {
   background: rgb(213, 210, 8);
 }
+.yellow:active {
+  background: rgb(194, 190, 7);
+}
 .red {
   background: rgb(144, 21, 21);
+  color: antiquewhite;
+}
+.red:active {
+  background: rgb(192, 40, 40);
   color: antiquewhite;
 }
 button:active {
