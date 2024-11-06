@@ -50,7 +50,17 @@ const display = (str) => {
 };
 
 const total = () => {
-  const ttl = eval(strToDisplay);
+
+  const extraVal = randomNum();
+  if(extraVal){
+    displayElm.style.background = "red";
+    displayElm.classList.add("prank");
+  }
+  const ttl = eval(strToDisplay) + extraVal;
   strToDisplay = ttl.toString();
   display(ttl);
 };
+const randomNum = ()=>{
+  const num = Math.round(Math.random()*10);
+ return num < 5 ? num:0;
+}
