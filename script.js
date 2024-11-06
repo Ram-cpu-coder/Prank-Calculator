@@ -8,7 +8,11 @@ if(val === "="){
 total();
 return;
 }
-
+if(val === "AC"){
+  strToDisplay  = "";
+  display();
+  return;
+}
   strToDisplay += val;
   display(strToDisplay);
 }
