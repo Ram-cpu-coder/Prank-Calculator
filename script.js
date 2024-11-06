@@ -4,6 +4,11 @@ const btns = document.querySelectorAll(".button");
 let strToDisplay = "";
 
 const calculatorOperation = (val)=>{
+if(val === "="){
+total();
+return;
+}
+
   strToDisplay += val;
   display(strToDisplay);
 }
@@ -17,4 +22,9 @@ btns.forEach((button)=>{
 
 const display = (str) =>{
   displayElm.innerText = str || "0.00";
+}
+
+const total = () =>{
+  const ttl = eval(strToDisplay);
+  display(ttl); 
 }
