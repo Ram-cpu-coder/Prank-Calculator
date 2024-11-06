@@ -2,7 +2,7 @@ const displayElm = document.querySelector(".input");
 const btns = document.querySelectorAll(".button");
 let strToDisplay = "";
 const operators = "%*/-+";
-
+let lastOperator = "";
 const calculatorOperation = (val) => {
   if (val === "=") {
     const lastChar = strToDisplay[strToDisplay.length - 1];
@@ -17,6 +17,10 @@ const calculatorOperation = (val) => {
       strToDisplay = strToDisplay.slice(0, -1);
     }
   }
+
+  // if(val === "."){
+  //   const 
+  // }
   strToDisplay += val;
   display(strToDisplay);
 };
