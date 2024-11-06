@@ -23,7 +23,11 @@ const calculatorOperation = (val) => {
     display();
     return;
   }
+if(val === "C"){
 
+  strToDisplay = strToDisplay.slice(0 , -1);
+  return display(strToDisplay);
+}
   if(val === "."){
     const indexOfLastOperator = strToDisplay.lastIndexOf(lastOperator);
     const lastNumberSet = strToDisplay.slice( indexOfLastOperator);
