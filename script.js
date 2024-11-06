@@ -4,6 +4,9 @@ let strToDisplay = "";
 const operators = "%*/-+";
 let lastOperator = "";
 const calculatorOperation = (val) => {
+
+  displayElm.style.background = "";
+  displayElm.classList.remove("prank");
   if (val === "=") {
     const lastChar = strToDisplay[strToDisplay.length - 1];
     if (operators.includes(lastChar)) {
