@@ -13,14 +13,18 @@ const calculatorOperation = (val) => {
   }
   if (operators.includes(val)) {
     const lastChar = strToDisplay[strToDisplay.length - 1];
+    lastOperator = val;
     if (operators.includes(lastChar)) {
       strToDisplay = strToDisplay.slice(0, -1);
     }
   }
 
-  // if(val === "."){
-  //   const 
-  // }
+  if(val === "."){
+    const indexOfLastOperator = strToDisplay.lastIndexOf(lastOperator);
+    const lastNumberSet = strToDisplay.slice( indexOfLastOperator);
+    if(lastNumberSet.includes(".")) return;
+    if(!lastOperator && strToDisplay.includes(".")) return;
+  }
   strToDisplay += val;
   display(strToDisplay);
 };
