@@ -13,6 +13,11 @@ if(val === "AC"){
   display();
   return;
 }
+
+if(val === "C"){
+  strToDisplay = strToDisplay.slice(0, -1);
+  return display(strToDisplay);
+}
   strToDisplay += val;
   display(strToDisplay);
 }
