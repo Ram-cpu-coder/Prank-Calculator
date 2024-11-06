@@ -2,6 +2,7 @@
 const displayElm = document.querySelector(".input");
 const btns = document.querySelectorAll(".button");
 let strToDisplay = "";
+const operator = "*-+%/";
 
 const calculatorOperation = (val)=>{
 if(val === "="){
@@ -17,6 +18,14 @@ if(val === "AC"){
 if(val === "C"){
   strToDisplay = strToDisplay.slice(0, -1);
   return display(strToDisplay);
+}
+
+if(operator.includes(val)){
+  const lastChar = strToDisplay[strToDisplay-1];
+  if(operator.includes(lastChar)){
+    strToDisplay = strToDisplay.slice(0, -1);
+  }
+  
 }
   strToDisplay += val;
   display(strToDisplay);
