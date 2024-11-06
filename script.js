@@ -18,6 +18,11 @@ const calculatorOperation = (val) => {
       strToDisplay = strToDisplay.slice(0, -1);
     }
   }
+  if(val === "AC"){
+    strToDisplay = "";
+    display();
+    return;
+  }
 
   if(val === "."){
     const indexOfLastOperator = strToDisplay.lastIndexOf(lastOperator);
