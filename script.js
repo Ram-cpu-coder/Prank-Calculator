@@ -3,6 +3,7 @@ const displayElm = document.querySelector(".input");
 const btns = document.querySelectorAll(".button");
 let strToDisplay = "";
 const operator = "*-+%/";
+let lastOperator = "";
 
 const calculatorOperation = (val)=>{
 if(val === "="){
@@ -21,11 +22,22 @@ if(val === "C"){
 }
 
 if(operator.includes(val)){
-  const lastChar = strToDisplay[strToDisplay-1];
+  lastOperator = val;
+  const lastChar = strToDisplay[strToDisplay.length-1];
   if(operator.includes(lastChar)){
     strToDisplay = strToDisplay.slice(0, -1);
   }
   
+}
+if(val === "."){
+  const indexOfLastOperator = strToDisplay.lastIndexOf(lastOperator);
+  const lastNumberSet = strToDisplay.slice(indexOfLastOperator);
+  if(lastNumberSet.includes(val)){
+    return
+  }
+  if(strToDisplay.includes(val) && !lastOperator){
+    return
+  }
 }
   strToDisplay += val;
   display(strToDisplay);
